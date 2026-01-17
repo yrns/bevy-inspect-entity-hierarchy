@@ -8,6 +8,16 @@ pub struct DebugEntityHierarchy<'w> {
     world: &'w World,
 }
 
+pub trait WorldExt {
+    fn inspect_entity_hierarchy(&self, entity: Entity) -> DebugEntityHierarchy<'_>;
+}
+
+impl WorldExt for World {
+    fn inspect_entity_hierarchy(&self, entity: Entity) -> DebugEntityHierarchy<'_> {
+        debug_entity_hierarchy(entity, self)
+    }
+}
+
 pub fn debug_entity_hierarchy(entity: Entity, world: &World) -> DebugEntityHierarchy<'_> {
     DebugEntityHierarchy { entity, world }
 }
@@ -99,7 +109,7 @@ mod tests {
             })
             .id();
 
-        let displayed = format!("{}", debug_entity_hierarchy(root, &mut world));
+        let displayed = format!("{}", world.inspect_entity_hierarchy(root));
 
         let expected = r#""root" (0v0): [Name, Children]
  ├"child_a" (1v0): [Name, ChildOf, Children]
