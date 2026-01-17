@@ -56,6 +56,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 
 [[package]]
+name = "bevy-inspect-entity-hierarchy"
+version = "0.1.0"
+dependencies = [
+ "bevy_ecs",
+]
+
+[[package]]
 name = "bevy_ecs"
 version = "0.17.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -384,13 +391,6 @@ checksum = "f5edaec856126859abb19ed65f39e90fea3a9574b9707f13539acf4abf7eb532"
 dependencies = [
  "futures-core",
  "pin-project-lite",
-]
-
-[[package]]
-name = "gens"
-version = "0.1.0"
-dependencies = [
- "bevy_ecs",
 ]
 
 [[package]]
