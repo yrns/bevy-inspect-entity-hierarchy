@@ -1,3 +1,20 @@
-- gens
+* bevy-inspect-entity-hierarchy
 
-Debug entity hierarchies in Bevy.
+Display entity hierarchies in Bevy.
+
+** Usage
+#+begin_src rust
+use bevy_inspect_entity_hierarchy::*;
+
+println!("{}", world.inspect_entity_hierarchy(entity));
+#+end_src
+
+#+begin_src
+"root" (0v0): [Name, Children]
+ ├"child_a" (1v0): [Name, ChildOf, Children]
+ │├"child_c" (2v0): [Name, ChildOf]
+ │└"child_d" (3v0): [Name, ChildOf, Children]
+ │ └"child_f" (4v0): [Name, ChildOf]
+ └"child_b" (5v0): [Name, ChildOf, Children]
+  └"child_e" (6v0): [Name, ChildOf]
+#+end_src
