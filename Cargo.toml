@@ -8,9 +8,9 @@ license = "MIT OR Apache-2.0"
 homepage = "https://github.com/yrns/bevy-inspect-entity-hierarchy"
 repository = "https://github.com/yrns/bevy-inspect-entity-hierarchy"
 keywords = ["bevy"]
-categories = ["game-development", "development-tools::debugging"]
+categories = ["development-tools::debugging", "game-development"]
 
 [dependencies]
-bevy_color = "0.17"
-bevy_ecs = { version = "0.17", default-features = false, features = ["trace"] }
+bevy_color = "0.18"
+bevy_ecs = { version = "0.18", default-features = false, features = ["debug"] }
 nu-ansi-term = "0.50.3"

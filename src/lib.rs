@@ -125,8 +125,8 @@ mod color {
 
     // Match gizmo color.
     pub(crate) fn color_from_entity(entity: Entity) -> Color {
-        let [r, g, b] =
-            LinearRgba::from(Oklcha::sequential_dispersed(entity.index())).to_u8_array_no_alpha();
+        let [r, g, b] = LinearRgba::from(Oklcha::sequential_dispersed(entity.index_u32()))
+            .to_u8_array_no_alpha();
         Color::Rgb(r, g, b)
     }
 }
